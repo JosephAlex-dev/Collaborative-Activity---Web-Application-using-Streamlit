@@ -18,14 +18,24 @@ with st.form("registration_form"):
 
     courses = st.multiselect(
         "Select Courses",
-        ["Python Programming", "Web Development", "Data Structures", "Cloud Computing", "AI Fundamentals", "Database Systems"]
+        ["Python Programming", "Web Development", "Data Structures",
+         "Cloud Computing", "AI Fundamentals", "Database Systems"]
     )
+
+    mode = st.radio(
+        "Mode of Study",
+        ["Online", "Offline", "Hybrid"]
+    )
+
+    terms = st.checkbox("I agree to the Terms and Conditions")
 
     submitted = st.form_submit_button("Register")
 
 if submitted:
     if not name or not email or not courses:
         st.error("Please fill all fields and select at least one course.")
+    elif not terms:
+        st.warning("Please accept the Terms and Conditions.")
     else:
         st.success("Registration Successful!")
         st.write("Name:", name)
@@ -33,3 +43,5 @@ if submitted:
         st.write("Department:", department)
         st.write("Semester:", semester)
         st.write("Courses Selected:", ", ".join(courses))
+        st.write("Mode of Study:", mode)
+        st.write("Terms Accepted:", terms)

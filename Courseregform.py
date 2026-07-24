@@ -261,4 +261,4 @@ with tab1:
             if id_proof is not None:
                 st.info(f"ID Proof Uploaded: {id_proof.name}")
 
-st.markdown('<p class="footer-note">Dekho Team • Course Registration Demo • Advanced Python</p>', unsafe_allow_html=True)
+st.markdown('<p class="footer-note">• Course Registration Demo • Advanced Python</p>', unsafe_allow_html=True)
